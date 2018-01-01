@@ -354,7 +354,7 @@ func WriteProcessMemory(hProcess HANDLE, lpBaseAddress, lpBuffer, nSize uintptr)
 	return nBytesWritten, ret != 0
 }
 
-func ReadProcessMemory(hProcess HANDLE, lpBaseAddress, nSize uintptr) (lpBuffer []uint16, lpNumberOfBytesRead int, ok bool) {
+func ReadProcessMemory(hProcess HANDLE, lpBaseAddress, nSize uintptr) (lpBuffer []byte, lpNumberOfBytesRead int, ok bool) {
 
 	var nBytesRead int
 	buf := make([]byte, nSize)
